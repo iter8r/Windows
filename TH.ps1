@@ -198,7 +198,7 @@ $SID_AND_ATTRIBUTES.Sid = $pSID
 $SID_AND_ATTRIBUTES.Attributes = 0x20
 $tml = New-Object TOKEN_MANDATORY_LABEL
 $tml.Label = $SID_AND_ATTRIBUTES
-$tmls = [System.Runtime.InteropServices.Marshal]::SizeOf($TOKEN_MANDATORY_LABEL)
+$tmls = [System.Runtime.InteropServices.Marshal]::SizeOf($tml)
 
 if([NtDll]::NtSetInformationToken($hNewToken,25,[ref]$tml,$tmls) -eq 0) {
 	echo "[*] Lowered token to Medium Integrity"
