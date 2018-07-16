@@ -1,3 +1,4 @@
+function TH {
 param (
     [Parameter(Mandatory = $True)]
 	[int]$Id
@@ -211,4 +212,5 @@ if([Advapi32]::CreateProcessAsUser($hNewToken,"C:\Windows\System32\cmd.exe",$fal
 } else {
     echo "[!] Failed to create process"
 	Break
+}
 }
